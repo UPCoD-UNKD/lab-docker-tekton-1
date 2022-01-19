@@ -5,7 +5,8 @@ FROM alpine:3.3
 RUN apk add --no-cache \
     python \
     py-pip \
-    ca-certificates
+    ca-certificates \
+    pip install --upgrade pip
 
 # Expose any ports the app is expecting in the environment
 ENV PORT 5000
