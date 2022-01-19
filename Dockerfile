@@ -1,12 +1,12 @@
 # Start with a Linux micro-container to keep the image tiny
-FROM alpine:3.3
+FROM alpine
 
 # Install just the Python runtime (no dev)
 RUN apk add --no-cache \
-    python \
+    python3 \
     py-pip \
     ca-certificates
-RUN pip install --upgrade pip
+RUN pip install --upgrade setuptools && pip install --upgrade pip
 
 # Expose any ports the app is expecting in the environment
 ENV PORT 5000
